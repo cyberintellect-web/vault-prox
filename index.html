@@ -107,42 +107,37 @@
         background-color: #000;
     }
 
-    /* Fixed Fullscreen Button */
     #fsbutton {
-        display: inline-block;
-        position: absolute;
-        bottom: 20px;
-        right: 20px;
-        background-color: rgba(13, 17, 23, 0.85);
-        
-        /* Box Model Fixes */
-        min-width: 140px; 
-        padding: 12px 20px;
-        box-sizing: border-box;
-        
-        cursor: pointer !important;
-        z-index: 5;
-        text-align: center;
-        border-radius: 2px; /* Sharper industrial look */
-        
-        font-family: 'Orbitron', sans-serif;
-        font-size: 12px;
-        font-weight: bold;
-        letter-spacing: 2px;
-        
-        border: 1px solid var(--vault-accent);
-        box-shadow: 0 0 10px rgba(88, 166, 255, 0.2), inset 0 0 5px rgba(88, 166, 255, 0.1);
-        color: var(--vault-accent);
-        transition: all 0.3s ease;
-        text-transform: uppercase;
-    }
+    /* Critical Fixes */
+    position: fixed;         /* Keeps it in one spot regardless of other elements */
+    bottom: 20px;            /* Distance from bottom */
+    right: 20px;             /* Distance from right */
+    width: 160px !important; /* Forces a horizontal width */
+    height: 45px !important; /* Forces a standard button height */
+    display: flex !important;
+    align-items: center;     /* Centers text vertically */
+    justify-content: center; /* Centers text horizontally */
+    z-index: 9999;           /* Ensures it stays on top of the vault UI */
+    
+    /* The Vault Styling */
+    background-color: #161b22;
+    color: #58a6ff;
+    border: 1px solid #58a6ff;
+    border-radius: 4px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(88, 166, 255, 0.2);
+    transition: 0.3s;
+}
 
-    #fsbutton:hover {
-        background-color: var(--vault-accent);
-        color: #0d1117;
-        box-shadow: 0 0 20px var(--vault-accent);
-        transform: translateY(-2px);
-    }
+#fsbutton:hover {
+    background-color: #58a6ff;
+    color: #0d1117;
+    box-shadow: 0 0 25px #58a6ff;
+}
 </style>
 </head>
 <body>
