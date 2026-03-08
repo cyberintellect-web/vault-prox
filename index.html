@@ -24,88 +24,117 @@
 -->
 
 <style>
+    @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@400&display=swap");
 
-        body{
-                background-color:black;
-                overflow:none;
-        }
-        #ads{
-          width:1px;
-          height:1px;
-          overflow:none;
-        }
-        ul.navbar {
-            list-style-type: none;
-            margin: 0;
-        z-index:2;
-            padding: 0;
-            overflow: hidden;
-            background-color: #333;
-          position:absolute;
-                box-shadow: 0 6px 2px -2px white;
-          width:100%;
-          top:0px;
-          left:0px;
-        }
-
-        li.nav-item {
-            float: left;
-            cursor: pointer !important;
-        }
-
-        li.nav-item a {
-            display: block;
-            color: white;
-            transition: all 1s;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-
-        li.nav-item a:hover {
-            background-color: #444;
-        }
-
-        li.nav-item2 {
-            float: right;
-            cursor: pointer !important;
-        }
-
-        li.nav-item2 a {
-            display: block;
-            color: white;
-            transition: all 1s;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-
-        li.nav-item2 a:hover {
-            background-color: #444;
-        }
-      #frame{
-        border:0px solid black;
-        position:absolute;
-        width:100%;
-        z-index:1;
-        height:100%;
-        bottom:0px;
-        left:0px;
-      }
-    #fsbutton{
-      display:block;
-      position:absolute;
-      background-color:#333;
-      width:100px;
-      cursor: pointer !important;
-      z-index:3;
-      text-align:center;
-      border-radius:25px;
-      border:2px solid white;
-      box-shadow: 0 6px 2px -2px white;
-      color:white;
+    :root {
+        --vault-bg: #0d1117;
+        --vault-accent: #58a6ff;
+        --vault-border: #30363d;
+        --vault-nav-bg: rgba(13, 17, 23, 0.95);
     }
-    </style>
+
+    body {
+        background-color: var(--vault-bg);
+        margin: 0;
+        overflow: hidden;
+        font-family: 'Roboto Mono', monospace;
+    }
+
+    #ads {
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        opacity: 0;
+    }
+
+    /* The Vault Navbar */
+    ul.navbar {
+        list-style-type: none;
+        margin: 0;
+        z-index: 10;
+        padding: 0;
+        overflow: hidden;
+        background-color: var(--vault-nav-bg);
+        backdrop-filter: blur(10px);
+        position: absolute;
+        border-bottom: 2px solid var(--vault-accent);
+        box-shadow: 0 4px 20px rgba(88, 166, 255, 0.15);
+        width: 100%;
+        top: 0px;
+        left: 0px;
+    }
+
+    li.nav-item {
+        float: left;
+        cursor: pointer !important;
+    }
+
+    li.nav-item2 {
+        float: right;
+        cursor: pointer !important;
+    }
+
+    li.nav-item a, li.nav-item2 a {
+        display: block;
+        color: var(--vault-text);
+        font-family: 'Orbitron', sans-serif;
+        font-size: 13px;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+        text-align: center;
+        padding: 16px 20px;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    li.nav-item a:hover, li.nav-item2 a:hover {
+        background-color: rgba(88, 166, 255, 0.1);
+        color: var(--vault-accent);
+        text-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
+    }
+
+    /* Main Content Frame */
+    #frame {
+        border: none;
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        height: calc(100% - 50px); /* Adjust based on navbar height */
+        bottom: 0px;
+        left: 0px;
+        background-color: var(--vault-bg);
+    }
+
+    /* The Vault Fullscreen Button */
+    #fsbutton {
+        display: block;
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        background-color: var(--vault-bg);
+        width: 120px;
+        padding: 10px 0;
+        cursor: pointer !important;
+        z-index: 3;
+        text-align: center;
+        border-radius: 4px;
+        font-family: 'Orbitron', sans-serif;
+        font-size: 11px;
+        font-weight: bold;
+        border: 1px solid var(--vault-accent);
+        box-shadow: 0 0 10px rgba(88, 166, 255, 0.2);
+        color: var(--vault-accent);
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+    }
+
+    #fsbutton:hover {
+        background-color: var(--vault-accent);
+        color: #000;
+        box-shadow: 0 0 20px var(--vault-accent);
+        transform: scale(1.05);
+    }
+</style>
 </head>
 <body>
 
